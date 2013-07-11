@@ -1,0 +1,22 @@
+<?php
+//code to be added
+
+include("server.php");
+
+$sercon = server_connection();
+$dbconn = dbconnection($sercon);
+session_start();
+$id_no = $_SESSION['id_no'];
+
+$ext_cur_act=mysql_real_escape_string($_POST['ext_act']);
+$data_string = "SELECT id_no from other where id_no='$id_no'";
+$rowno = mysql_num_rows(mysql_query($data_string));
+if(!$rowno)
+$data_string="INSERT INTO other(id_no,ext_cur_act) VALUES('$id_no','$ext_cur_act')";
+else
+$data_string="UPDATE other SET ext_cur_act='$ext_cur_act' where id_no='$id_no'";
+
+mysql_query($data_string);
+header("Location: index.php");
+
+?>

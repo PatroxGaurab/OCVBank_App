@@ -1,0 +1,53 @@
+<?php
+include("server.php");
+$sercon = server_connection();
+$dbconn = dbconnection($sercon);
+
+//echo '<script>alert("index.php")</script>';
+session_start();
+
+$email = mysql_real_escape_string($_POST['email']);
+$pass = md5(mysql_real_escape_string($_POST['password']));
+$email2=$email."@students.becs.ac.in";
+$query1 = mysql_query('select CHECK_FIELD,PASS_WORD from REGISTRATION where EMAIL_ID="'.$email2.'"');
+
+if (mysql_num_rows($query1)) {
+    $score = mysql_fetch_assoc($query1);
+	$score1=$score['PASS_WORD'];
+	$score2=$score['CHECK_FIELD'];
+	if($score2=='FALSE')
+	{
+		echo("<script>alert('Your Account has not been Verified!')</script>");
+		//echo("<script>window.location('home.php')</script>");
+                header("Location: /OCVBank1/home.php");
+	}
+	else
+	{
+		if($pass==$score1)
+		{
+			//echo 3;
+			$query3 = mysql_query('select FULL_NAME,REGISTRATION_NO from REGISTRATION where EMAIL_ID="'.$email2.'"');
+			if (mysql_num_rows($query3)) {
+    				$score = mysql_fetch_assoc($query3);
+				$score3=$score['REGISTRATION_NO'];
+				$score4=$score['FULL_NAME'];
+			}
+			session_start();
+			$_SESSION['id_no'] = $score3;
+			$_SESSION['user_name'] = $score4;
+			$temp = $_SESSION['user_name'];
+			//echo("<script>alert('$score4')</script>");
+		        header("Location: /OCVBank1/");
+		}
+		else
+		{
+			echo 2;
+		}
+	}
+}
+else {
+    echo 1;
+}
+
+
+?>

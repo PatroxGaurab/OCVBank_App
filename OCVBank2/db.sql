@@ -1,0 +1,72 @@
+use OCV;
+create table basic 
+(
+ id_no varchar(9) primary key, /*id_no...primary key..*/
+ /*Basic Information*/
+ email varchar(100) not null,  /*email outside @students.becs.ac.in*/
+ ph_no varchar(13) not null,   /*mobile no.*/
+ addr_1 varchar(500) not null,  /*address...*/
+ addr_2 varchar(500) ,          /* if someone needs so two more text boxes are provided..may be null*/
+ addr_3 varchar(500) ,          /*address continued..may be null*/
+ dept   varchar(50) not null,  /*department*/
+ sem    varchar(1)  not null  /*it will be a number from 1-8*/
+);
+ /*Programming expertise
+ prog_c denotes c programming 
+ exp_c  denotes experties..it will be either expert, proficient, beginner
+ 
+ prog_cs denotes c# programming..similarly follows exp_cs..
+*/
+ create table prog
+(
+ id_no varchar(9) primary key, 
+ prog_c varchar(5) ,           
+ exp_c  varchar(50) ,
+ prog_cpp varchar(5) ,
+ exp_cpp  varchar(50) ,
+ prog_java varchar(5) ,
+ exp_java  varchar(50),
+ prog_js varchar(5),
+ exp_js  varchar(50),
+ prog_php varchar(5),
+ exp_php  varchar(50),
+ prog_py varchar(5),
+ exp_py  varchar(50),
+ prog_cs varchar(5),
+ exp_cs  varchar(50),
+ prog_ru varchar(5),
+ exp_ru  varchar(50)
+ 
+);
+ /*Other Information..basically these are textarea...*/
+create table other
+(
+ id_no varchar(9) primary key, 
+ oth_skills text,   /*other skill*/
+ ar_interest text , /*area of interest*/
+ sp_achievements text,/*special achievements*/
+ proj text,           /*projects*/
+ ext_cur_act text     /*extra curicullar activity*/
+);
+
+/*Extra fields added by the User*/
+create table custom
+(
+ id_no varchar(9) primary key, 
+ nooffields int default 0,
+ field1after varchar(2),
+ field1name varchar(500),
+ field1 text,  
+ field2after varchar(2), 
+ field2name varchar(500),
+ field2 text, 
+ field3after varchar(2),
+ field3name varchar(500),
+ field3 text,
+ field4after varchar(2),
+ field4name varchar(500),
+ field4 text, 
+ field5after varchar(2), 
+ field5name varchar(500),   
+ field5 text   
+);

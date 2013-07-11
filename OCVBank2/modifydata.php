@@ -1,0 +1,45 @@
+<?php
+//code to be added
+include("server.php");
+
+$sercon = server_connection();
+$dbconn = dbconnection($sercon);
+session_start();
+$q=$_GET["q"];
+$id_no = $_SESSION['id_no'];
+if(isset($_SESSION['user_name']))
+{
+	$usr = $_SESSION['id_no'];
+	
+	//echo("<script>alert('$usr')</script>");
+}
+else
+{	
+	/*echo("<script>alert('Sorry!! You need to log in to access this page')</script>");
+	header("Location: home.php");*/
+}
+if($q=="othlan")
+	$q="oth_skills";
+else if($q=="ar_int")
+	$q="ar_interest";
+else if($q=="sp_ach")
+	$q="sp_achievements";
+else if($q=="proj")
+	$q="proj";
+else if($q=="ext_act")
+	$q="ext_cur_act";
+/*
+$email=mysql_real_escape_string($_POST['email_basic']);
+$phone=mysql_real_escape_string($_POST['phone']);
+$address1=mysql_real_escape_string($_POST['address_1']);
+$address2=mysql_real_escape_string($_POST['address_2']);
+$address3=mysql_real_escape_string($_POST['address_3']);*/
+//$modf=mysql_real_escape_string($_POST['modification']);
+//$sem=mysql_real_escape_string($_POST['sem']);
+
+$data_string="SELECT $q FROM other WHERE id_no='$id_no'";
+$out = mysql_query($data_string);
+$data_out = mysql_fetch_array($out);
+echo $data_out[0];
+//header("Location: index.php");
+?>

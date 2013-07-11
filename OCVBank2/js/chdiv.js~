@@ -1,0 +1,22 @@
+<script type="text/javascript">
+function chdivs(val)
+{
+alert("hi");
+	var newval = "1";
+	if(val=="basic_info")
+		newval = "1";
+	else if(val=="othlan")
+		newval = "2";
+	else if(val=="ar_int")
+		newval = "3";
+	else if(val=="sp_ach")
+		newval = "4";
+	else if(val=="proj")
+		newval = "5";
+	else if(val=="ext_act")
+		newval = "6";
+	brow_q(newval);
+	
+}
+</script>
+

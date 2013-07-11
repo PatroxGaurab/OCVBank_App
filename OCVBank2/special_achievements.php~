@@ -1,0 +1,22 @@
+<?php
+//code to be added
+
+include("server.php");
+
+$sercon = server_connection();
+$dbconn = dbconnection($sercon);
+session_start();
+$id_no = $_SESSION['id_no'];
+
+$special=mysql_real_escape_string($_POST['sp_ach']);
+$data_string = "SELECT id_no from other where id_no='$id_no'";
+$rowno = mysql_num_rows(mysql_query($data_string));
+if(!$rowno)
+$data_string="INSERT INTO other(id_no,sp_achievements) VALUES('$id_no','$special')";
+else
+$data_string="UPDATE other SET sp_achievements='$special' where id_no='$id_no'";
+
+mysql_query($data_string);
+header("Location: http://localhost/OCVBank1/index.php");
+
+?>

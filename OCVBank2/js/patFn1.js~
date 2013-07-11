@@ -1,0 +1,107 @@
+function fbw()
+ {
+	 document.getElementById("backward_Img").style.background= "url('../Pic_for_Des_Web/yearBackward_down.gif') bottom no-repeat";
+	 return;
+ }
+ function ffw()
+ {
+	  document.getElementById("forward_Img").style.background= "url('../Pic_for_Des_Web/yearForward_down.gif') bottom no-repeat";
+ }
+ function fbwu()
+ {
+	 document.getElementById("backward_Img").style.background= "url('../Pic_for_Des_Web/yearBackward_normal.gif') bottom no-repeat";
+	
+ }
+ function ffwu()
+ {
+	  document.getElementById("forward_Img").style.background= "url('../Pic_for_Des_Web/yearForward_normal.gif') bottom no-repeat";
+ }
+ function fbwo()
+ {
+	 document.getElementById("backward_Img").style.background= "url('../Pic_for_Des_Web/yearBackward_over.gif') bottom no-repeat";
+	
+ }
+ function ffwo()
+ {
+	  document.getElementById("forward_Img").style.background= "url('../Pic_for_Des_Web/yearForward_over.gif') bottom no-repeat";
+ }
+function dis_ops()
+{
+//alert("dis OK"+is_sel[0]);
+
+for( var q_n = 1; q_n <= 11 ; q_n++ )
+{
+	var str = "div" + q_n;
+	//alert(is_sel[q_n-1]);
+	document.getElementById(str).style.display= (!is_sel[q_n-1])? "none" : "block";
+
+	/*if( is_sel[q_n-1] )
+	{
+		var xp = 100;
+		document.getElementById(str).style.left= xp+"px";
+		move_div=new drop_down_obj(str,50,0.3);
+		move_div.createAnimation();
+	}*/
+
+	var s = "";
+	s = q_n;
+
+	document.getElementById(s).parentNode.style.backgroundColor= (is_sel[q_n-1])? "blue" : "" ;
+	
+}
+}
+
+function brow_q( br_to_no )
+{
+	//alert( br_to_no );
+	is_sel[q_sel-1] = false;
+	//alert( br_to_no );
+	q_sel = br_to_no;
+	is_sel[q_sel-1] = true;
+	dis_ops();
+}
+
+function goto_prev_q()
+ {
+if( q_sel == 1 )
+{
+	alert("This is the FIRST Question..!");
+	return;
+}
+q_sel--;
+is_sel[q_sel] = false;
+is_sel[q_sel-1] = true;
+dis_ops();
+}
+
+ function goto_nxt_q()
+ {
+if( q_sel == no_of_q )
+{
+	alert("This is the LAST Question..!");
+	return;
+}
+is_sel[q_sel-1] = false;
+is_sel[q_sel] = true;
+q_sel++;
+dis_ops();
+//document.getElementById("Q1").style.visibility= "hidden";
+
+//dis_q(<?php echo $is_sel;?>);
+ }
+
+function animHead()
+{
+	//alert("anim Ok");
+	fall_obj1=new drop_down_obj("h_pic",10,0.6);
+	//document.getElementById("h_pic").style.left= "0px";
+	fall_obj1.createAnimation()
+}
+
+
+ function pass_len(form_pass)
+ {
+    //var td = document.getElementByName(form);
+    form_pass.pass_l.value = (form_pass.password1.value.length < 5)? "Low":((form_pass.password1.value.length < 9)?"Medium" : "High");
+ }
+// JavaScript Document

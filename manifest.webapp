@@ -1,0 +1,21 @@
+{
+	"version": "0.1",
+	"name": "Onlive CV Bank",
+	"description": "Platform to showcase your past",
+	"launch_path": "/OCVBank_APp/index.html",
+	"icons": {
+		"16": "/img/icons/appicon-16.png",
+		"48": "/img/icons/appicon-48.png",
+		"128": "/img/icons/appicon-128.png"
+	},
+	"developer": {
+		"name": "Gaurab Patra",
+		"url": "http://www.facebook.com/gaurab.patra"
+	},
+	"installs_allowed_from": ["*"],
+	
+	"default_locale": "en",
+	"permissions": {
+		"systemXHR": {}
+	}
+}
